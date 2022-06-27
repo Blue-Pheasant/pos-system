@@ -1,0 +1,80 @@
+h1 {
+    text-align: center;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.store__listing {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.item-card {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.item-image {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.item-info {
+    padding-top: 12px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 106px;
+}
+
+.item-name {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.item-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 32px;
+}
+
+.item-footer p {
+    margin: 0;
+}
+
+.item-button {
+    width: 32px;
+    height: 32px;
+    background-color: #fa8c16;
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.wrapper_product {
+    padding: 0 15px;
+}
+
+.item-butotn-image {
+    width: 16px;
+    height: 16px;
+}
+
+.item-store-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.item-phone {
+    margin-bottom: 0px;
+}
