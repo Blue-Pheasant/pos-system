@@ -41,7 +41,7 @@
 
         <nav class="navbar navbar-expand-lg ">
             <a class="navbar-brand" href="/">
-                <img class="logo" alt="logo"  src="{{ url('storage/images/logo/logo-2.png') }}">
+                <img class="logo" alt="logo"  src="{{ url('/images/logo/logo-2.png') }}">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,7 +71,7 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="/profile">
                             <div class="header-image header-image-user">
-                                <img class="header-image-icon" src="{{ url('storage/images/user.png') }}" />
+                                <img class="header-image-icon" src="{{ url('/images/user.png') }}" />
                             </div>
                             Chào {{ Auth::user()->name }}
                         </a>
@@ -79,14 +79,14 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="/cart">
                             <div class="header-image">
-                                <img class="header-image-icon" src="{{ url('storage/images/cart.png') }}" />
+                                <img class="header-image-icon" src="{{ url('/images/cart.png') }}" />
                             </div>
                         </a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="/orders">
                             <div class="header-image">
-                                <img class="header-image-icon" src="{{ url('storage/images/orders.png') }}" />
+                                <img class="header-image-icon" src="{{ url('/images/orders.png') }}" />
                             </div>
                         </a>
                     </li>
@@ -96,7 +96,7 @@
                             document.getElementById('logout-form').submit();">
                             
                             <div class="header-image">
-                                <img class="header-image-icon" src="{{ url('storage/images/logout.png') }}" />
+                                <img class="header-image-icon" src="{{ url('/images/logout.png') }}" />
                             </div>
                             
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

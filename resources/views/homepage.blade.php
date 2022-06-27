@@ -15,13 +15,13 @@
 
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="2000">
-                <img src="{{ url('storage/images/slider/slider-1.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ url('/images/slider/slider-1.jpg') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-                <img src="{{ url('storage/images/slider/slider-2.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ url('/images/slider/slider-2.jpg') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-                <img src="{{ url('storage/images/slider/slider-3.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ url('/images/slider/slider-3.jpg') }}" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -41,7 +41,7 @@
             <div class="row gy-5">
                 <div class="col-md-12 col-lg-6">
                     <div>
-                        <img src="{{ url('storage/images/home/home-1.png') }}" />
+                        <img src="{{ url('/images/home/home-1.png') }}" />
                     </div>
                     <h3>Tinh thần tối giản</h3>
                     <p>
@@ -67,20 +67,20 @@
                     </p>
                 </div>
                 <div class="col-md-12 col-lg-6 home-poster">
-                    <img class="home-image" src="{{ url('storage/images/poster/poster-1.jpg') }}" />
-                    <img class="home-image" src="{{ url('storage/images/poster/poster-2.jpg') }}" />
+                    <img class="home-image" src="{{ url('/images/poster/poster-1.jpg') }}" />
+                    <img class="home-image" src="{{ url('/images/poster/poster-2.jpg') }}" />
                 </div>
             </div>
         </div>
         <div class="home-block">
             <div class="row gy-5">
                 <div class="col-md-12 col-lg-6 home-poster">
-                    <img class="home-image"  src="{{ url('storage/images/poster/poster-4.png') }}" />
-                    <img class="home-image"  src="{{ url('storage/images/poster/poster-3.png') }}" />
+                    <img class="home-image"  src="{{ url('/images/poster/poster-4.png') }}" />
+                    <img class="home-image"  src="{{ url('/images/poster/poster-3.png') }}" />
                 </div>
                 <div class="col-md-12 col-lg-6">
                     <div>
-                        <img  src="{{ url('storage/images/home/home-2.png') }}" />
+                        <img  src="{{ url('/images/home/home-2.png') }}" />
                     </div>
                     <h3>Nguyên liệu nhập khẩu cao cấp</h3>
                     <p>
@@ -111,7 +111,7 @@
             <div class="row  gy-5">
                 <div class="col-md-12 col-lg-6">
                     <div>
-                        <img src="{{ url('storage/images/home/home-3.png') }}" />
+                        <img src="{{ url('/images/home/home-3.png') }}" />
                     </div>
                     <h3>Sản phẩm chính hãng </h3>
                     <p>
@@ -137,8 +137,8 @@
                     </p>
                 </div>
                 <div class="col-md-12 col-lg-6 home-poster">
-                    <img class="home-image"  src="{{ url('storage/images/poster/poster-5.png') }}" />
-                    <img class="home-image"  src="{{ url('storage/images/poster/poster-6.png') }}" />
+                    <img class="home-image"  src="{{ url('/images/poster/poster-5.png') }}" />
+                    <img class="home-image"  src="{{ url('/images/poster/poster-6.png') }}" />
                 </div>
             </div>
         </div>

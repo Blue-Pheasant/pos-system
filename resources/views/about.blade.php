@@ -4,7 +4,7 @@
 <link href="{{ asset('css/about.css') }}" rel="stylesheet">
 <div class="about">
     <div class="page-heading">
-        <img class="page-banner" src="{{ url('storage/images/page-banner.jpg') }}" alt="page-banner" />
+        <img class="page-banner" src="{{ url('/images/page-banner.jpg') }}" alt="page-banner" />
         <p style="text-align:center">
             <span style="font-size:25px">
                 <span style="color:#804000">

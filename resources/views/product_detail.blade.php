@@ -50,7 +50,7 @@
                         <div class="product-detail-note">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">
-                                    <img src="{{ url('storage/images/clipboard-solid.svg') }}" class="product-detail-clipboard"
+                                    <img src="{{ url('/images/clipboard-solid.svg') }}" class="product-detail-clipboard"
                                         alt="clipboard" />
                                 </span>
                                 <input name="note" type="text" class="form-control"

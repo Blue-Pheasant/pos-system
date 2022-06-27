@@ -4,7 +4,7 @@
 <link href="{{ asset('css/menu.css') }}" rel="stylesheet">
 <div class="menu">
     <div class="menu__header">
-        <img class="menu-image" src="{{ url('storage/images/menu.png') }}" alt="menu-image" />
+        <img class="menu-image" src="{{ url('/images/menu.png') }}" alt="menu-image" />
         <h3>Thực đơn của chúng mình</h3>
     </div>
 
@@ -31,7 +31,7 @@
     <div class="menu__options">
         <a class="option" href="/menu">
             <div class="option-image-block">
-                <img src="{{ url('storage/images/grid.png') }}" alt="grid" class="option-image" />
+                <img src="{{ url('/images/grid.png') }}" alt="grid" class="option-image" />
             </div>
             <h6>
                 Tất cả sản phẩm
@@ -39,7 +39,7 @@
         </a>
         <a class="option" href="/menu?category_id=1">
             <div class="option-image-block">
-                <img src="{{ url('storage/images/coffee-cup.png') }}" alt="coffee-cup" class="option-image" />
+                <img src="{{ url('/images/coffee-cup.png') }}" alt="coffee-cup" class="option-image" />
             </div>
             <h6>
                 Cà phê
@@ -47,7 +47,7 @@
         </a>
         <a class="option" href="/menu?category_id=5">
             <div class="option-image-block">
-                <img src="{{ url('storage/images/milk-tea.png') }}" alt="milk-tea" class="option-image" />
+                <img src="{{ url('/images/milk-tea.png') }}" alt="milk-tea" class="option-image" />
             </div>
             <h6>
                 Trà trái cây - Trà sửa
@@ -55,7 +55,7 @@
         </a>
         <a class="option" href="/menu?category_id=2">
             <div class="option-image-block">
-                <img src="{{ url('storage/images/milkshake.png') }}" alt="milkshake" class="option-image" />
+                <img src="{{ url('/images/milkshake.png') }}" alt="milkshake" class="option-image" />
             </div>
             <h6>
                 Đá xay
@@ -63,7 +63,7 @@
         </a>
         <a class="option" href="/menu?category_id=18">
             <div class="option-image-block">
-                <img src="{{ url('storage/images/coffee.png') }}" alt="coffee" class="option-image" />
+                <img src="{{ url('/images/coffee.png') }}" alt="coffee" class="option-image" />
             </div>
             <h6>
                 Thưởng thức tại nhà
@@ -71,7 +71,7 @@
         </a>
         <a class="option" href="/menu?category_id=20">
             <div class="option-image-block">
-                <img src="{{ url('storage/images/glass.png') }}" alt="glass" class="option-image" />
+                <img src="{{ url('/images/glass.png') }}" alt="glass" class="option-image" />
             </div>
             <h6>
                 Tumbler collection
