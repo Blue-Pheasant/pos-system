@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class MenuController extends Controller
 {
@@ -29,6 +28,24 @@ class MenuController extends Controller
 
         return view('product_detail', [
             'product' => $product
+        ]);
+    }
+
+    public function category($id)
+    {
+        $products = Product::getByCategory($id);
+
+        return view('menu', [
+            'products' => $products
+        ]);
+    }
+
+    public function search(Request $request)
+    {
+        $products = Product::search($request->input("keyword"));
+
+        return view('menu', [
+            'products' => $products
         ]);
     }
 }

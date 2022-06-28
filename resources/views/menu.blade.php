@@ -9,13 +9,14 @@
     </div>
 
     <div class="menu__search">
-        <form accept-charset="utf-8" class="search-form" method="post" action="">
+        <form accept-charset="utf-8" class="search-form" method="POST" action="">
             <div class="container">
                 <div class="row">
                     <div class="col-md-9 col-lg-10">
                         <div class="form-floating mb-3">
                             <input type="text" name="keyword" class="form-control" id="floatingInput"
                                 placeholder="Tìm kiếm theo tên sản phẩm bạn quan tâm" aria-describedby="button-addon1">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         </div>
                     </div>
                     <div class="col-md-3 col-lg-2">
@@ -24,7 +25,6 @@
                     </div>
                 </div>
             </div>
-
         </form>
     </div>
 
@@ -37,7 +37,7 @@
                 Tất cả sản phẩm
             </h6>
         </a>
-        <a class="option" href="/menu?category_id=1">
+        <a class="option" href="/menu/category/1">
             <div class="option-image-block">
                 <img src="{{ url('/images/coffee-cup.png') }}" alt="coffee-cup" class="option-image" />
             </div>
@@ -45,7 +45,7 @@
                 Cà phê
             </h6>
         </a>
-        <a class="option" href="/menu?category_id=5">
+        <a class="option" href="/menu/category/5">
             <div class="option-image-block">
                 <img src="{{ url('/images/milk-tea.png') }}" alt="milk-tea" class="option-image" />
             </div>
@@ -53,7 +53,7 @@
                 Trà trái cây - Trà sửa
             </h6>
         </a>
-        <a class="option" href="/menu?category_id=2">
+        <a class="option" href="/menu/category/2">
             <div class="option-image-block">
                 <img src="{{ url('/images/milkshake.png') }}" alt="milkshake" class="option-image" />
             </div>
@@ -61,7 +61,7 @@
                 Đá xay
             </h6>
         </a>
-        <a class="option" href="/menu?category_id=18">
+        <a class="option" href="/menu/category/18">
             <div class="option-image-block">
                 <img src="{{ url('/images/coffee.png') }}" alt="coffee" class="option-image" />
             </div>
@@ -69,7 +69,7 @@
                 Thưởng thức tại nhà
             </h6>
         </a>
-        <a class="option" href="/menu?category_id=20">
+        <a class="option" href="/menu/category/20">
             <div class="option-image-block">
                 <img src="{{ url('/images/glass.png') }}" alt="glass" class="option-image" />
             </div>
