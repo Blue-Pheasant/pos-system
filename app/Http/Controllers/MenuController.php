@@ -27,7 +27,8 @@ class MenuController extends Controller
         $product = Product::show($id);
 
         return view('product_detail', [
-            'product' => $product
+            'product' => $product,
+            'product_id' => $id
         ]);
     }
 
