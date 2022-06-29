@@ -3,7 +3,7 @@
 @section('content')
 <link href="{{ asset('css/product_detail.css') }}" rel="stylesheet">
 <div class="page-container">
-    <form accept-charset="utf-8" action="" method="post">
+    <form accept-charset="utf-8" method="POST" action="">
         <div class="product-detail">
             <div class="container">
                 <div class="row gx-5">
@@ -28,8 +28,10 @@
                     <div class="col-md-12 col-lg-6 product-detail-right">
                         <div class="product-detail-name"> {{ $product->name }} </div>
                         <div class="product-detail-footer">
-                            <div><span
-                                    class="price">{{ number_format($product->price, 0, ',', '.') }}</span>đ
+                            <div>
+                                <span class="price">
+                                    {{ number_format($product->price, 0, ',', '.') }}đ
+                                </span>
                             </div>
                             <div class="product-detail-footer-quantity">
                                 <button type="button" id="decrease-quantity-button" disabled
@@ -93,6 +95,8 @@
                                         + 6.000đ
                                     </div>
                                 </div>
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="hidden" name="product_id" value="{{ $product_id }}">
                             </div>
                         </div>
                         <div class="product-detail-button">
@@ -113,30 +117,29 @@
             </div>
         </div>
     </form>
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="notification" class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
                 <img src="/images/logo/logo-2.png" width="30px" class="rounded me-2" alt="logo-2">
                 <strong class="me-auto">Buy me store</strong>
                 <small>Bây giờ</small>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="toast-body">
                 Thêm vào giỏ hàng thành công.
             </div>
         </div>
     </div>
-
 </div>
 <script src="{{ asset('js/product_detail.js') }}"></script>
-<script>
-// <?php
-//     if ($params['addToCart']) {
-//         echo "var toastTrigger = document.getElementById('liveToastBtn')
-//             var toastLiveExample = document.getElementById('liveToast')
-//             var toast = new bootstrap.Toast(toastLiveExample)
-//             toast.show()";
-//     }
-//     ?>
-</script>
+@if (\Session::get('message')) 
+    <script>
+        const toastTrigger = document.getElementById('liveToastBtn')
+        const toastLiveExample = document.getElementById('liveToast')
+        const toast = new bootstrap.Toast(toastLiveExample)
+        toast.show()
+    </script>
+@endif
 @endsection
