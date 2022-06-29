@@ -32,4 +32,8 @@ Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::get('/stores', 'HomeController@stores')->name('stores');
 Route::get('/product/{id}', 'MenuController@detail')->name('detail');
+Route::post('/product/{id}', 'CartController@add')->name('addIntoCart');
 Route::post('/menu', 'MenuController@search')->name('search');
+Route::get('/cart', 'CartController@show')->name('cart');
+Route::post('/cart/{id}/remove', 'CartController@remove')->name('cartRemove');
+Route::post('/cart/{id}/update', 'CartController@edit')->name('cartEdit');
