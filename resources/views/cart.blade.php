@@ -201,21 +201,21 @@ function total($iems)
                                             document.getElementById('form-popup_$item->id').style.display = 'none';
                                         }
                                         function increaseQuantity_$item->id() {
-                                            var currentQuantity = parseInt(document.getElementById("product-quantity_$item->id").value,10);
+                                            var currentQuantity = parseInt(document.getElementById('product-quantity_$item->id').value,10);
                                             if(currentQuantity == 1 ){
-                                                document.getElementById("decrease-quantity-button_$item->id").disabled = false;
-                                                document.getElementById("decrease-quantity-button_$item->id").classList.remove("item-button-disabled_$item->id");
+                                                document.getElementById('decrease-quantity-button_$item->id').disabled = false;
+                                                document.getElementById('decrease-quantity-button_$item->id').classList.remove('item-button-disabled_$item->id');
                                             }
-                                            document.getElementById("product-quantity_$item->id").value = currentQuantity + 1;
+                                            document.getElementById('product-quantity_$item->id').value = currentQuantity + 1;
                                         }
 
                                         function decreaseQuantity_$item->id() {
-                                            var currentQuantity = parseInt(document.getElementById("product-quantity_$item->id").value,10);
+                                            var currentQuantity = parseInt(document.getElementById('product-quantity_$item->id').value,10);
                                             if(currentQuantity == 2 ){
-                                            document.getElementById("decrease-quantity-button_$item->id").disabled = true;
-                                            document.getElementById("decrease-quantity-button_$item->id").classList.add("item-button-disabled_$item->id");
+                                            document.getElementById('decrease-quantity-button_$item->id').disabled = true;
+                                            document.getElementById('decrease-quantity-button_$item->id').classList.add('item-button-disabled_$item->id');
                                             }
-                                            document.getElementById("product-quantity_$item->id").value = currentQuantity - 1;
+                                            document.getElementById('product-quantity_$item->id').value = currentQuantity - 1;
                                         };
                                     </script>" 
                             @endphp
