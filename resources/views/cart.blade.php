@@ -83,9 +83,7 @@ function total($iems)
                                     <div class="container">
                                         <div class="row gy-2">
                                             <div class="col-lg-1 col-md-1 col-sm-2 col-4">
-                                                <button class="open-button" onclick="openForm_{{$item->id}}()">
-                                                    <img class="cart-page__item-edit" src="{{ url('/images/pencil-fill.svg') }}" />
-                                                </button>
+                                                <img class="cart-page__item-edit" src="{{ url('/images/pencil-fill.svg') }}" onclick="openForm()" id="{{$item->id}}"/>
                                             </div>
                                             <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                                                 <img class="cart-page__item-image" src="{{ $item->image_url }}" />
@@ -97,9 +95,9 @@ function total($iems)
                                                 <div>Size: {{ sizeContent($item->size) }}</div>
                                             </div>
                                         </div>
-                                        <div class="form-popup" id="form-popup_{{$item->id}}">
+                                        <div class="form-popup" id="form-popup-{{$item->id}}">
                                             <form accept-charset="utf-8" method="POST" action="{{ action("CartController@edit", ['id' => $item->id]) }}" class="form-container">
-                                                <button type="button" class="btn-close" aria-label="Close" onclick="closeForm_{{$item->id}}()"></button>
+                                                <button type="button" class="btn-close" aria-label="Close" onclick="closeForm()" id="{{$item->id}}"></button>
                                                 <div class="row gy-2 information">
                                                     <div class="col-lg-2 col-md-2 col-sm-4 col-4">
                                                         <img class="cart-page__item-image"
@@ -114,15 +112,14 @@ function total($iems)
                                                 </div>
                                                 <div class="product-detail-footer">
                                                     <div class="product-detail-footer-quantity">
-                                                        <button type="button" id="decrease-quantity-button_{{$item->id}}" disabled
-                                                            class="item-button-disabled" onclick="decreaseQuantity_{{$item->id}}()">
+                                                        <button type="button" class="item-button-disabled increasebtn" onclick="decreaseQuantity()" id="decrease-quantity-button-{{$item->id}}">
                                                             <img class="item-button-image"
                                                                 src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMiIgdmlld0JveD0iMCAwIDE2IDIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxNiIgaGVpZ2h0PSIyIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K"
-                                                                alt="" />
+                                                                alt=""/>
                                                         </button>
                                                         <input type="text" name="quantity" class="form-control quantity-input"
-                                                            id="product-quantity_{{$item->id}}" value="1">
-                                                        <button type="button" id="increase-quantity-button_{{$item->id}}" onclick="increaseQuantity_{{$item->id}}()">
+                                                            id="product-quantity-{{$item->id}}" value="1">
+                                                        <button type="button" id="increase-quantity-button-{{$item->id}}" class="decreasebtn" onclick="increaseQuantity()">
                                                             <img class="item-button-image"
                                                                 src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYuODU3MTQgNi44NTcxNFYwSDkuMTQyODZWNi44NTcxNEgxNlY5LjE0Mjg2SDkuMTQyODZWMTZINi44NTcxNFY5LjE0Mjg2SDBWNi44NTcxNEg2Ljg1NzE0WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg=="
                                                                 alt="" />
@@ -191,35 +188,6 @@ function total($iems)
                                     </form>
                                 </div>
                             </div>
-                            @php
-                               echo "<script>
-                                        function openForm_$item->id() {
-                                            document.getElementById('form-popup_$item->id').style.display = 'block';
-                                        }
-                                    
-                                        function closeForm_$item->id() {
-                                            document.getElementById('form-popup_$item->id').style.display = 'none';
-                                        }
-                                        function increaseQuantity_$item->id() {
-                                            var currentQuantity = parseInt(document.getElementById('product-quantity_$item->id').value,10);
-                                            if(currentQuantity == 1 ){
-                                                document.getElementById('decrease-quantity-button_$item->id').disabled = false;
-                                                document.getElementById('decrease-quantity-button_$item->id').classList.remove('item-button-disabled_$item->id');
-                                            }
-                                            document.getElementById('product-quantity_$item->id').value = currentQuantity + 1;
-                                        }
-
-                                        function decreaseQuantity_$item->id() {
-                                            var currentQuantity = parseInt(document.getElementById('product-quantity_$item->id').value,10);
-                                            if(currentQuantity == 2 ){
-                                            document.getElementById('decrease-quantity-button_$item->id').disabled = true;
-                                            document.getElementById('decrease-quantity-button_$item->id').classList.add('item-button-disabled_$item->id');
-                                            }
-                                            document.getElementById('product-quantity_$item->id').value = currentQuantity - 1;
-                                        };
-                                    </script>" 
-                            @endphp
-                            
                             @endforeach
                             @endif
                         </div>
@@ -385,4 +353,38 @@ function total($iems)
     toast.show()
 </script>
 @endif
+
+<script>
+    function openForm() {
+        document.getElementById("form-popup-".concat(event.target.id)).style.display = 'block';
+    }
+
+    function closeForm() {
+        console.log("form-popup-".concat(event.target.id));
+        document.getElementById("form-popup-".concat(event.target.id)).style.display = 'none';
+    }
+
+    function increaseQuantity() {
+        var id = event.target.id.match(/\d+/);
+        console.log("product-quantity-".concat(id));
+        var currentQuantity = parseInt(document.getElementById("product-quantity-".concat(id)).value, 10);
+        if(currentQuantity == 1 ){
+            
+            document.getElementById("decrease-quantity-button-".concat(id)).disabled = false;
+            document.getElementById("decrease-quantity-button-".concat(id)).classList.remove("item-button-disabled-".concat(id));
+        }
+        document.getElementById("product-quantity-".concat(id)).value = currentQuantity + 1;
+    }
+
+    function decreaseQuantity() {
+        var id = event.target.id.match(/\d+/);
+        console.log("product-quantity".concat(id));
+        var currentQuantity = parseInt(document.getElementById("product-quantity-".concat(id)).value, 10);
+        if(currentQuantity == 2 ){
+        document.getElementById("decrease-quantity-button-".concat(id)).disabled = true;
+        document.getElementById("decrease-quantity-button-".concat(id)).classList.add("item-button-disabled".concat(id));
+        }
+        document.getElementById("product-quantity-".concat(id)).value = currentQuantity - 1;
+    };
+</script>
 @endsection
